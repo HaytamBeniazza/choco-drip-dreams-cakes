@@ -8,7 +8,6 @@ const Hero = () => {
           className="text-4xl md:text-6xl lg:text-7xl font-playfair font-extrabold italic mb-4 tracking-tight"
           style={{
             color: "#FAF8F7",
-            textShadow: "0 4px 24px rgba(58,38,24,0.18), 0 1px 2px rgba(58,38,24,0.08)",
             letterSpacing: "0.06em",
             fontStyle: "italic",
             // Added soft glow and warmth
