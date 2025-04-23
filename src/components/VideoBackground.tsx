@@ -1,40 +1,59 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const VideoBackground = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Optional: Preload the video
-    const videoElement = document.getElementById('bg-video') as HTMLVideoElement;
+    const videoElement = videoRef.current;
+    
     if (videoElement) {
-      videoElement.addEventListener('loadeddata', () => {
+      // Log video source
+      console.log('Video Source:', videoElement.currentSrc);
+      
+      // Add more detailed event listeners
+      videoElement.addEventListener('loadstart', () => {
+        console.log('Video loading started');
+      });
+
+      videoElement.addEventListener('loadedmetadata', () => {
+        console.log('Video metadata loaded');
+        console.log('Video duration:', videoElement.duration);
+      });
+
+      videoElement.addEventListener('canplay', () => {
+        console.log('Video can play');
         setVideoLoaded(true);
       });
-      
+
+      videoElement.addEventListener('error', (e) => {
+        console.error('Video Error:', e);
+      });
+
       videoElement.addEventListener('ended', () => {
+        console.log('Video ended');
         setVideoEnded(true);
       });
-      
-      // Fallback in case the video doesn't fire the ended event
-      setTimeout(() => {
-        setVideoEnded(true);
-      }, 7500); // Slightly longer than the video duration
     }
     
     return () => {
       if (videoElement) {
-        videoElement.removeEventListener('loadeddata', () => setVideoLoaded(true));
-        videoElement.removeEventListener('ended', () => setVideoEnded(true));
+        // Cleanup event listeners
+        videoElement.removeEventListener('loadstart', () => {});
+        videoElement.removeEventListener('loadedmetadata', () => {});
+        videoElement.removeEventListener('canplay', () => {});
+        videoElement.removeEventListener('error', () => {});
+        videoElement.removeEventListener('ended', () => {});
       }
     };
   }, []);
 
   return (
     <div className={`video-container ${videoEnded ? 'opacity-30 transition-opacity duration-1000' : 'opacity-100'}`}>
-      {/* Video element */}
       <video 
+        ref={videoRef}
         id="bg-video"
         autoPlay 
         muted 
@@ -52,3 +71,4 @@ const VideoBackground = () => {
 };
 
 export default VideoBackground;
+
