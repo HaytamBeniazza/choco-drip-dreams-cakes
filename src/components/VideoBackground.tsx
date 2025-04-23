@@ -61,7 +61,7 @@ const VideoBackground = () => {
         className="w-full h-full object-cover"
       >
         <source 
-          src="https://www.dropbox.com/scl/fi/q8rie1nl09msirarfyitu/Generated-File-April-22-2025-5_37PM.mp4?raw=1" 
+          src="https://www.dropbox.com/scl/fi/q8rie1nl09msirarfyitu/Generated-File-April-22-2025-5_37PM.mp4?rlkey=wswqyzbi0jenwhm1sg2uxvryq&st=erux4lzj&raw=1" 
           type="video/mp4" 
         />
         Your browser does not support the video tag.
