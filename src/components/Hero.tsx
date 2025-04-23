@@ -10,7 +10,10 @@ const Hero = () => {
             color: "#FAF8F7",
             textShadow: "0 4px 24px rgba(58,38,24,0.18), 0 1px 2px rgba(58,38,24,0.08)",
             letterSpacing: "0.06em",
-            fontStyle: "italic"
+            fontStyle: "italic",
+            // Added soft glow and warmth
+            textShadow: "0 4px 24px rgba(212,175,55,0.3), 0 1px 2px rgba(58,38,24,0.2)",
+            transition: "text-shadow 0.3s ease",
           }}
         >
           Chocolate Drip Dreams
@@ -22,7 +25,9 @@ const Hero = () => {
             letterSpacing: "0.04em",
             background: "rgba(255,255,255,0.02)",
             borderRadius: "0.5em",
-            padding: "0.15em 1.3em"
+            padding: "0.15em 1.3em",
+            // Added warm, soft glow effect
+            textShadow: "0 1px 3px rgba(212,175,55,0.2)",
           }}
         >
           Let your senses melt.
