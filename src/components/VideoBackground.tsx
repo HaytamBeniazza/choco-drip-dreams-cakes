@@ -61,7 +61,7 @@ const VideoBackground = () => {
         className="w-full h-full object-cover"
       >
         <source 
-          src="https://player.vimeo.com/video/1077872977?h=2e2f916886" 
+          src="https://www.dropbox.com/scl/fi/q8rie1nl09msirarfyitu/Generated-File-April-22-2025-5_37PM.mp4?raw=1" 
           type="video/mp4" 
         />
         Your browser does not support the video tag.
@@ -71,4 +71,3 @@ const VideoBackground = () => {
 };
 
 export default VideoBackground;
-
