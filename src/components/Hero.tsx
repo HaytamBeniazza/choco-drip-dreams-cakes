@@ -1,21 +1,35 @@
 
-import { Button } from "@/components/ui/button";
+import FloatingDroplet from "./FloatingDroplet";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center z-10">
-      <div className="container mx-auto px-4 text-center content-overlay opacity-0 animate-fade-in">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gold mb-6">
+    <div className="relative min-h-screen flex items-center justify-center z-10 pointer-events-none">
+      {/* Minimal Overlay */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center" style={{ pointerEvents: "auto" }}>
+        <h1
+          className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-4"
+          style={{
+            color: "#FAF8F7",
+            textShadow: "0 4px 24px rgba(58,38,24,0.18), 0 1px 2px rgba(58,38,24,0.08)"
+          }}
+        >
           Chocolate Drip Dreams
         </h1>
-        <p className="text-xl md:text-2xl text-cream mb-8 max-w-2xl mx-auto">
-          Indulge in exquisite handcrafted cakes made with the finest ingredients and finished with a perfect chocolate drip
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <Button className="button-gold">Order Now</Button>
-          <Button variant="outline" className="button-chocolate">Explore Menu</Button>
-        </div>
+        <span
+          className="block text-lg md:text-xl font-montserrat font-normal tracking-wide"
+          style={{
+            color: "#FFFCF9",
+            letterSpacing: "0.04em",
+            background: "rgba(255,255,255,0.02)",
+            borderRadius: "0.5em",
+            padding: "0.15em 1.3em"
+          }}
+        >
+          Let your senses melt.
+        </span>
       </div>
+      {/* Minimal Floating Shape (droplet) */}
+      <FloatingDroplet />
     </div>
   );
 };
