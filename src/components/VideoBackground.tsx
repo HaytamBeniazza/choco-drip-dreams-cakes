@@ -42,7 +42,7 @@ const VideoBackground = () => {
         className="w-full h-full object-cover"
       >
         <source 
-          src="https://drive.google.com/uc?export=download&id=11a-w51Oy7EZgH7AF8nhcqOlecmr9XwuO" 
+          src="https://player.vimeo.com/video/1077872977?h=2e2f916886" 
           type="video/mp4" 
         />
         Your browser does not support the video tag.
