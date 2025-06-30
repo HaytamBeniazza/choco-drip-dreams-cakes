@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -22,6 +21,9 @@ export default {
 			fontFamily: {
 				montserrat: ['Montserrat', 'sans-serif'],
 				playfair: ['Playfair Display', 'serif'],
+				cormorant: ['Cormorant', 'serif'],
+				lora: ['Lora', 'serif'],
+				dm: ['DM Sans', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -124,13 +126,24 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				'slide-from-left': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(-50px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out forwards',
-				'slide-up': 'slide-up 0.8s ease-out forwards'
+				'slide-up': 'slide-up 0.8s ease-out forwards',
+				'slide-from-left': 'slide-from-left 0.8s ease-out forwards'
 			}
 		}
 	},
